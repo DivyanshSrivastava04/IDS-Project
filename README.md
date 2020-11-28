@@ -1,2 +1,2 @@
 # IDS-Project
-Course project for IDS 2020
+Course project for Introduction to Data Science, 2020

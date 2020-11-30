@@ -16,6 +16,7 @@ del df['West Bengal1']
 #we will split database into two parts 
 
 df_1 = df.iloc[:6,:]
+df_2 = df.iloc[6:,:]
 
 #appyling interpolation method to fill nan values in dataset1
 df_1.interpolate(method='pchip' , limit_direction ='forward', inplace=True )

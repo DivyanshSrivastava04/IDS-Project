@@ -71,6 +71,11 @@ y1 = [i[1] for i in NDPgrowth[5:]]
 x2 = [i[0] for i in NDPgrowth[-5:]]
 y2 = [i[1] for i in NDPgrowth[-5:]]
 
+plt.subplots(figsize=(6, 6))
+plt.barh(x1, y1, color='red')
+
+plt.barh(x2, y2, color='g')
+
 #del df_1['Item Description']
 #del df_1['All_India NDP']
 

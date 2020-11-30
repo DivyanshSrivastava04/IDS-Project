@@ -1,10 +1,10 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-import seaborn as sns
+#import seaborn as sns
 #from sklearn.model_selection import train_test_split
 #from sklearn import metrics
-%matplotlib inline
+#%matplotlib inline
 pd.options.display.float_format = "{:,.2f}".format
 
 df = pd.read_csv('https://raw.githubusercontent.com/DivyanshSrivastava04/IDS-Project/main/Dataset.csv?token=ANPGBX7V2H3MCI4P55HSCAK7ZOPTM')
@@ -53,13 +53,20 @@ for col in df_1.columns[2:]:
     maxi = df_1[col].max()
     maxi_per = df_2[col].max()
     #print(col,'max growth is {:0.2f}'.format(maxi), 'max % growth is {:0.2f}\n'.format(maxi_per))
+
+NDPgrowth = []
     
 #avg growth of states 
 for col in df_1.columns[2:]:
     maxi = df_1[col].mean()
     maxi_per = df_2[col].mean()
-    print(col,'mean growth is {:0.2f}'.format(maxi), 'mean % growth is {:0.2f}\n'.format(maxi_per))
-    
+    NDPgrowth.append((col, maxi_per))
+    #print(col,'mean growth is {:0.2f}'.format(maxi), 'mean % growth is {:0.2f}\n'.format(maxi_per))
+
+NDPgrowth.sort(key=lambda x: x[1])
+
+top5NDPgrowth = NDPgrowth[:5]
+bottom5NDPgrowth = NDPgrowth[-5:]
 
 #del df_1['Item Description']
 #del df_1['All_India NDP']

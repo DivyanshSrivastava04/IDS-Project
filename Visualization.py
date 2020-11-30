@@ -58,3 +58,18 @@ for col in df_1.columns[2:]:
     maxi = df_1[col].mean()
     maxi_per = df_2[col].mean()
     print(col,'mean growth is {:0.2f}'.format(maxi), 'mean % growth is {:0.2f}\n'.format(maxi_per))
+    
+
+#del df_1['Item Description']
+#del df_1['All_India NDP']
+
+#piechart of statewise contribution in NDP of India
+fig, axes = plt.subplots(2, 3, figsize=(30, 20))
+
+for i, (idx, row) in enumerate(df_1.set_index('Duration').iterrows()):
+    ax = axes[i // 3, i % 3]
+    row = row[row.gt(row.sum() * .01)]
+    ax.pie(row, labels=row.index, startangle=30)
+    ax.set_title(idx)
+
+fig.subplots_adjust(wspace=.2)

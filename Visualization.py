@@ -65,8 +65,11 @@ for col in df_1.columns[2:]:
 
 NDPgrowth.sort(key=lambda x: x[1])
 
-top5NDPgrowth = NDPgrowth[:5]
-bottom5NDPgrowth = NDPgrowth[-5:]
+x1 = [i[0] for i in NDPgrowth[5:]]
+y1 = [i[1] for i in NDPgrowth[5:]]
+
+x2 = [i[0] for i in NDPgrowth[-5:]]
+y2 = [i[1] for i in NDPgrowth[-5:]]
 
 #del df_1['Item Description']
 #del df_1['All_India NDP']
